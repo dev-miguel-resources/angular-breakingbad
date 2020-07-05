@@ -1,0 +1,21 @@
+<div class="container">
+    <div>
+        <app-search-character (filter)="onSearch($event)" (tryLuck)="onTryLuck($event)"></app-search-character>
+    </div>
+
+    <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+    <div>
+        <div class="text-center" *ngIf="characterList.length > 1">
+            <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='characterGrid'></pagination-controls>
+        </div>  
+        <div class="card-grid">
+            <app-character *ngFor="let character of characterList | paginate: { id: 'characterGrid', 
+                            itemsPerPage: pageSize, 
+                            currentPage: page, 
+                            totalItems: totalRecords }" [character]="character"></app-character>  
+        </div>
+        <div class="text-center" *ngIf="characterList.length > 1">
+            <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='characterGrid'></pagination-controls>
+        </div>
+    </div>  
+</div>

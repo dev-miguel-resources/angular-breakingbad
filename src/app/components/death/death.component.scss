@@ -1,0 +1,36 @@
+.mat-raised-button {
+    margin-left: 8px;
+}
+
+.buttons-align {
+    text-align: center;
+}
+
+.mt-xs {
+  margin-top: 1rem;
+} 
+
+.nb-xs {
+  margin-bottom: 1rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px 20px; 
+    margin: auto;
+  }
+  
+  @media (min-width: 510px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
+  }
+  
+  @media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  
+  }

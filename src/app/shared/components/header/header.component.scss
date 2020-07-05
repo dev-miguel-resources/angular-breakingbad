@@ -1,0 +1,29 @@
+.mat-toolbar.mat-primary {
+  background: #000000;
+  color: #fff;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 100px;
+}
+
+.logo {
+  height: 70px;
+  background-color: white;
+  padding: 7px;
+}
+
+
+nav > a {
+    padding: 5px;
+    text-decoration: none;
+  }
+  nav > a.active {
+    background-color: #ffd740;
+  }
+  .header-row{
+    width: 100%;
+  }
+  .header-toolbar {
+    margin-bottom: 20px;
+  }

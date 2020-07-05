@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "breaking-bad-api",
+    "y": "breaking-bad-api-2bf63"
+  },
+  "targets": {
+    "breaking-bad-api": {
+      "hosting": {
+        "breaking-bad-api": [
+          "breaking-bad-api"
+        ]
+      }
+    }
+  }
+}

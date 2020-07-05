@@ -1,0 +1,25 @@
+<article class="all-episodes">
+    <article class="episode">
+        <div class="row">
+            <div class="col-xs-12
+                        col-sm-8
+                        col-md-6
+                        col-lg-4">
+                <div class="box"><h2>Episodio: {{ episode.episode_id }}</h2></div>
+            </div>
+            <div class="col-xs-12
+                        col-sm-8
+                        col-md-6
+                        col-lg-4">
+                <div class="box"><h2>Nombre: {{ episode.title}}</h2></div>
+            </div>
+            <div class="col-xs-12
+                        col-sm-8
+                        col-md-6
+                        col-lg-4">
+                <div class="box"><h2>Temporada {{ episode.season}}</h2></div>
+            </div>
+        </div>
+        <img [src]="episode.serieImg" alt="">
+    </article>
+</article>

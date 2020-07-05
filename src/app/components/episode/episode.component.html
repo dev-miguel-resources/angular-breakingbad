@@ -1,0 +1,21 @@
+<div class="container">
+    <article class="all-episodes">
+        <app-search-episode class="search-episode" (filter)="onSearch($event)"></app-search-episode>
+        <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+        <div *ngIf="!loading">
+            <div class="text-center" *ngIf="episodeList.length > 1">
+                <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='episodeGrid'></pagination-controls>
+            </div>   
+            <app-episode-detail *ngFor="let episode of episodeList | paginate: { id: 'episodeGrid', 
+                                                                                 itemsPerPage: pageSize, 
+                                                                                 currentPage: page, 
+                                                                                 totalItems: totalRecords }" 
+                                [episode]="episode">
+            </app-episode-detail>
+            <div class="text-center" *ngIf="episodeList.length > 1">
+                <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='episodeGrid'></pagination-controls>
+            </div> 
+        </div>
+          
+    </article>
+</div>

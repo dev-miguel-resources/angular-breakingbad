@@ -1,0 +1,39 @@
+.character-card {
+    max-width: 300px;
+    background: rgb(0, 0, 0);
+    margin: auto;
+    margin-bottom: 15px;
+    transition: all 0.5s;
+}
+
+.character-image {
+  height: 300px;
+}
+
+.character-card:hover {
+  background: #2b0606;
+  transform: scale(1.1);
+}
+
+.card-title {
+  color:rgb(255, 255, 255)
+}
+
+.character-list-item button {
+    text-align: right;
+  }
+
+.card-content-description {
+  color:rgb(255, 255, 255)
+}
+
+.character-list-item {
+  justify-content: space-between;
+}
+
+p {
+  color:rgb(255, 255, 255);
+}
+
+
+

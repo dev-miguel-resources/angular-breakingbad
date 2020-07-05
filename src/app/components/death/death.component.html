@@ -1,0 +1,40 @@
+<mat-spinner class="spinner" *ngIf="deathNumber === 0"></mat-spinner>
+
+<div *ngIf="deathNumber > 0">
+    
+    <div class="container">
+        
+        <div class="row center-xs mt-xs nb-xs">
+            <app-death-counting [deathNumber]="deathNumber"></app-death-counting>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row end-xs mt-xs nb-xs">
+            <div class="buttons-align">
+                <button mat-raised-button color="accent" (click)="findByCondition('All')">Ver Todas</button>
+                <button mat-raised-button color="accent" (click)="findByCondition('Random')">Random</button>
+            </div>
+        </div>
+
+        <mat-spinner class="spinner" *ngIf="loading === true"></mat-spinner>
+
+        <div class="row center-xs">
+            
+            <app-random-death class="text-center" *ngIf="singleDeath" [death]="singleDeath"></app-random-death>
+        
+            <div class="text-center" *ngIf="deathList.length > 1">
+                <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='deathGrid'></pagination-controls>
+            </div>  
+            <div class="card-grid">
+                <app-death-list *ngFor="let death of deathList | paginate: { id: 'deathGrid', 
+                                                                            itemsPerPage: pageSize, 
+                                                                            currentPage: page, 
+                                                                            totalItems: totalRecords }" [death]="death"></app-death-list>  
+            </div>
+        
+            <div class="text-center" *ngIf="deathList.length > 1">
+                <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='deathGrid'></pagination-controls>
+            </div>   
+        </div>
+    </div>
+</div>
+ 

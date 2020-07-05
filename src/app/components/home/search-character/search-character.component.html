@@ -1,0 +1,17 @@
+<mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput type="text" [(ngModel)]="characterName">
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Serie</mat-label>
+  <mat-select [(value)]="serieSelect">
+      <mat-option>None</mat-option>
+      <mat-option value="Breaking Bad">Breaking Bad</mat-option>
+      <mat-option value="Better Call Saul">Better Call Saul</mat-option>
+    </mat-select>
+</mat-form-field>
+  
+  
+  <button mat-raised-button color="accent" (click)="onSearch()">Buscar</button>
+  <button mat-raised-button color="accent" (click)="onTryLuck()">Probar Suerte</button>
